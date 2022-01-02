@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Cart from "./Pages/Cart/Cart";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 import Glasses from "./Pages/Glasses/Glasses/Glasses";
 import Home from "./Pages/Home/Home";
 import Jewelaries from "./Pages/Jewelaries/Jewelaries/Jewelaries";
@@ -22,6 +24,8 @@ function App() {
           <Route path="/watches" element={<Watches />} />
           <Route path="/glasses" element={<Glasses />} />
           <Route path="/jewelaries" element={<Jewelaries />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
