@@ -1,6 +1,6 @@
 import React from "react";
 
-const jewelariesHome = () => {
+const JewelariesHome = () => {
   return (
     <div>
       <h1>this is jewelaries home</h1>
@@ -8,4 +8,4 @@ const jewelariesHome = () => {
   );
 };
 
-export default jewelariesHome;
+export default JewelariesHome;

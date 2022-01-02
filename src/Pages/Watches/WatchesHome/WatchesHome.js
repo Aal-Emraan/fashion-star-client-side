@@ -1,6 +1,6 @@
 import React from "react";
 
-const watchesHome = () => {
+const WatchesHome = () => {
   return (
     <div>
       <h1>this is watches home</h1>
@@ -8,4 +8,4 @@ const watchesHome = () => {
   );
 };
 
-export default watchesHome;
+export default WatchesHome;
