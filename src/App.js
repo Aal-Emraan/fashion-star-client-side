@@ -8,8 +8,10 @@ import Jewelaries from "./Pages/Jewelaries/Jewelaries/Jewelaries";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import Footer from "./Pages/Shared/Footer/Footer";
+import Header from "./Pages/Shared/Header/Header";
 import Navbar from "./Pages/Shared/Navbar/Navbar";
 import Watches from "./Pages/Watches/Watches/Watches";
+import WatchesHome from "./Pages/Watches/WatchesHome/WatchesHome";
 
 function App() {
   return (
