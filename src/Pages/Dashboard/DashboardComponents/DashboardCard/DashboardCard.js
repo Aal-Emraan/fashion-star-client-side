@@ -43,7 +43,7 @@ const DashboardCard = (props) => {
                     <div className="flex justify-between py-4">
                         <div className='flex'>
                             <h2 className='text-yellow-500 text-2xl mr-3'>${discount_price}</h2>
-                            <h2 className='text-gray-500 line-through text-2xl'>${regular_price}</h2>
+                            <h2 className='text-gray-500 line-through text-xl'>${regular_price}</h2>
 
                         </div>
                         <Rating
