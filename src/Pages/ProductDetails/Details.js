@@ -21,7 +21,7 @@ const Details = () => {
         <div style={{minHeight: '80vh'}}>
             <div className="details">
                 <div className='details-header'>
-
+                <h2>ok</h2>
                 </div>
                 <div className="main-details flex gap-4">
                     <div style={{width:'50%'}}>
