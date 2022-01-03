@@ -1,0 +1,37 @@
+.home-watch-banner {
+  background-image: url("https://i.imgur.com/gq0BOSq.png");
+  background-position: center;
+  background-size: cover;
+}
+.home-watch-content {
+  padding: 10% 4%;
+}
+.home-watch-h2 {
+  font-size: 24px;
+  font-family: cursive;
+  color: #4d4d4d;
+}
+.home-watch-h3 {
+  font-size: 60px;
+  width: 34%;
+  line-height: 61px;
+  font-family: emoji;
+  padding: 2% 0 1%;
+  color: #43637f;
+}
+.home-watch-btn {
+  background-color: #135997;
+  padding: 9px 20px;
+  font-size: 20px;
+  color: aliceblue;
+  box-shadow: 1px 1px 5px #00000085;
+  margin-top: 2%;
+}
+.home-watch-btn:hover {
+  background-color: #ffffff;
+  padding: 9px 20px;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  box-shadow: 1px 1px 5px #00000085;
+  margin-top: 2%;
+}
