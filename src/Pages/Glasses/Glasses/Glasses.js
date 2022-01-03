@@ -20,9 +20,10 @@ const Glasses = () => {
     <div className="min-h-screen ">
       <Container>
         <div className="mt-5 py-5">
-          <Button sx={{ mr: 2 }} variant="outlined" color="secondary" onClick={() => dispatch(setViewProducts({ type: 'all' }))}>AllProduct</Button>
+          <Button sx={{ mr: 2 }} variant="outlined" color="secondary" onClick={() => dispatch(setViewProducts({ type: 'all' }))}>All Products</Button>
           <Button sx={{ mr: 2 }} variant="outlined" color="secondary" onClick={() => dispatch(changeViewProducts({ for: 'men' }))}>Men</Button>
           <Button sx={{ mr: 2 }} variant="outlined" color="secondary" onClick={() => dispatch(changeViewProducts({ for: 'women' }))}>Women</Button>
+          <Button sx={{ mr: 2 }} variant="outlined" color="secondary" onClick={() => dispatch(changeViewProducts({ for: 'kid' }))}>Kids</Button>
 
         </div>
         <Grid container spacing={4}>

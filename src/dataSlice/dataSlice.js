@@ -24,11 +24,18 @@ export const getProducts = createAsyncThunk(
 export const getAllProducts = createAsyncThunk(
     'data/getAllProducts',
     async () => {
-        console.log('dfffdfedfd');
         const response = await axios.get(`http://localhost:5000/products`);
         return response.data;
     }
 )
+export const deleteProducts = createAsyncThunk(
+    'data/deleteProducts',
+    async (info) => {
+        const response = await axios.delete(`http://localhost:5000/products/${info._id}`);
+        return response.data;
+    }
+)
+
 
 export const dataSlice = createSlice({
     name: 'data',
@@ -59,7 +66,6 @@ export const dataSlice = createSlice({
                 default:
                     break;
             }
-            state.men = null
         },
         setLoading: (state, action) => {
             state.loading = action.payload;
@@ -84,6 +90,10 @@ export const dataSlice = createSlice({
             .addCase(getAllProducts.fulfilled, (state, action) => {
                 state.viewProducts = action.payload;
                 state.loading = false;
+            })
+            .addCase(deleteProducts.fulfilled, (state, action) => {
+                console.log('done', action.payload);
+                state.viewProducts = state?.viewProducts?.filter(product => product._id !== action.payload._id)
             })
     },
 });

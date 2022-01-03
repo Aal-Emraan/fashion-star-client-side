@@ -23,6 +23,7 @@ import EmojiNatureIcon from '@material-ui/icons/EmojiNature';
 import { Outlet } from "react-router-dom";
 import { NavLink } from 'react-router-dom';
 import ViewListIcon from '@material-ui/icons/ViewList';
+import { Button } from '@mui/material';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -71,16 +72,14 @@ function Dashboard(props) {
   const drawer = (
     <div>
       <div className={classes.toolbar} />
+      <Button variant='contained' component={NavLink} to='/'>Back to Home</Button>
       <Divider />
       <List>
-        <ListItem button component={NavLink} activeClassName='text-red-800' to='/dashboard' >
+        <ListItem button component={NavLink} to='/dashboard' >
           <ListItemIcon><AllInboxIcon></AllInboxIcon> </ListItemIcon>
           <ListItemText primary={"All Products"} />
         </ListItem>
-        <ListItem activeStyle={{
-          fontWeight: "bold",
-          color: "red"
-        }} button component={NavLink} to='/dashboard/allWatches'>
+        <ListItem button component={NavLink} to='/dashboard/allWatches'>
           <ListItemIcon><WatchIcon></WatchIcon> </ListItemIcon>
           <ListItemText primary={"Watches"} />
         </ListItem>

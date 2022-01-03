@@ -34,7 +34,7 @@ const GlassCard = props => {
                         <h2 className='text-yellow-500 text-2xl'>${regular_price}</h2>
                         <Rating
                             name="simple-controlled"
-                            value={average_rating}
+                            value={parseInt(average_rating)}
                             readOnly
                         />
                     </div>

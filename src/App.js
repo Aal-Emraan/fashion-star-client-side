@@ -7,6 +7,7 @@ import AllJewellers from "./Pages/Dashboard/DashboardComponents/AllJewellers/All
 import AllOrders from "./Pages/Dashboard/DashboardComponents/AllOrders/AllOrders";
 import AllProducts from "./Pages/Dashboard/DashboardComponents/AllProducts";
 import AllWatches from "./Pages/Dashboard/DashboardComponents/AllWatches/AllWatches";
+import UpdateCard from "./Pages/Dashboard/DashboardComponents/UpdateCard/UpdateCard";
 import GlassesDetails from "./Pages/Glasses/GlasseDetails/GlassesDetails";
 import Glasses from "./Pages/Glasses/Glasses/Glasses";
 import Home from "./Pages/Home/Home";
@@ -37,6 +38,7 @@ function App() {
             <Route path='/dashboard/allGlasses' element={<AllGlasses></AllGlasses>} />
             <Route path='/dashboard/allJewellers' element={<AllJewellers></AllJewellers>} />
             <Route path='/dashboard/allOrders' element={<AllOrders></AllOrders>} />
+            <Route path='/dashboard/update/:id' element={<UpdateCard></UpdateCard>} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
