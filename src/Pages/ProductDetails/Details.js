@@ -10,8 +10,10 @@ const Details = () => {
     const [products] = useProducts();
 
     console.log(id);
-    const selectedProducts = products.filter(product => product.category === details?.category);
+    const selectedCategory = products.filter(product => product.category === details?.category);
+    const selectedProducts = selectedCategory.filter(product => product.for === details?.for);
     const selectedProducts2 = selectedProducts.filter(selectedProduct => selectedProduct._id !== id);
+    // const selectedProducts3 = selectedProducts2.filter(selectedProducts => selectedProducts.for !== details?.for);
     const productSlice = selectedProducts2.slice(0, 4)
 
     useEffect(()=>{

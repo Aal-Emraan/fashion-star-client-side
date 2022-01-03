@@ -1,5 +1,5 @@
-.main-details{
-
+.main-details {
+    padding: 3% 6%;
 }
 .details-header {
     background: antiquewhite;
@@ -30,7 +30,7 @@
 }
 .short-des {
     width: 85%;
-    font-size: 16px;
+    font-size: 19px;
     color: #695d5e;
     padding-top: 3%;
     font-family: sans-serif;
