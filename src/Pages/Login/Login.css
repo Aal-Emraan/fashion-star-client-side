@@ -1,0 +1,17 @@
+#login {
+  background-image: url("../../img/login-watch.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#submit {
+  background-color: #f5731c;
+}
+
+#google {
+  border: 1px solid #4285f4;
+}
+#facebook {
+  border: 1px solid #3b5998;
+}
