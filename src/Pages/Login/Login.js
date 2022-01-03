@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import "./Login.css";
 import google from "../../img/google.png";
@@ -84,6 +85,14 @@ const Login = () => {
           </div>
         </div>
       </div>
+=======
+import React from "react";
+
+const Login = () => {
+  return (
+    <div>
+      <h1>this is login</h1>
+>>>>>>> a66a1509bde10bc132b276b5c227550251d19b64
     </div>
   );
 };
