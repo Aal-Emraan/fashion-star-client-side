@@ -9,9 +9,10 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from '../../../dataSlice/dataSlice';
+import { NavLink } from 'react-router-dom';
 
 const GlassCard = props => {
-    const { title, img, description, available_colors, average_rating, regular_price } = props.data;
+    const { title, _id, img, description, available_colors, average_rating, regular_price } = props.data;
     const dispatch = useDispatch()
     return (
         <Grid item sm={12} md={4}>
@@ -33,14 +34,14 @@ const GlassCard = props => {
                         <h2 className='text-yellow-500 text-2xl'>${regular_price}</h2>
                         <Rating
                             name="simple-controlled"
-                            value={average_rating}
-                            reading
+                            value={parseInt(average_rating)}
+                            readOnly
                         />
                     </div>
                 </CardContent>
                 <CardActions className='flex justify-between'>
                     <Button onClick={() => dispatch(addToCart(props.data))}>Add to Cart</Button>
-                    <Button  >See Details </Button>
+                    <Button component={NavLink} to={`/glasses/${_id}`}>See Details </Button>
                 </CardActions>
             </Card>
         </Grid>

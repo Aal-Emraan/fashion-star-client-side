@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import useProducts from "../../../Hooks/useProducts";
 import "./Watches.css";
-import useProducts from "../../../hooks/useProducts";
 import WatchesSingle from "./WatchesSingle/WatchesSingle";
 
 const Watches = () => {
