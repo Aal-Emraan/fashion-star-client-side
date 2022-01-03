@@ -54,8 +54,11 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <div className="bg-gray-900 p-16 rounded-xl relative top-16">
-          <h2 className="text-5xl text-center">
+        <div
+          id="discount"
+          className=" p-10  italic rounded-xl relative top-16 opacity-90"
+        >
+          <h2 className="text-5xl text-center font-mono">
             GET 20% DISCOUNT ON YOUR FIRST PURCHASE!
           </h2>
         </div>
