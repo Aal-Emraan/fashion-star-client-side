@@ -1,12 +1,14 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import '../Watches.css'
 
 
 const WatchesSingle = (props) => {
-    const {category, img, title, regular_price, discount_price, average_rating} = props.product;
-    const discount = regular_price - discount_price;
+    const {category, img, title, regular_price, discount_price, average_rating, _id} = props.product;
+    // const discount = regular_price - discount_price;
 
-    console.log(discount);
+    const detailsUrl = `/details/${_id}`
+
     return (
         <div className='single-product-home'>
             <div className=''>
@@ -20,7 +22,7 @@ const WatchesSingle = (props) => {
                 </div>
                 <div className='flex justify-center gap-3 pb-4'>
                 <button className='product-btn'>ADD TO CARD</button>
-                <button className='product-btn'>BUY NOW</button>
+                <NavLink to={detailsUrl}><button  className='product-btn'>BUY NOW</button></NavLink>
                 </div>
             </div>
         </div>

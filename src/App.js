@@ -6,6 +6,7 @@ import Glasses from "./Pages/Glasses/Glasses/Glasses";
 import Home from "./Pages/Home/Home";
 import Jewelaries from "./Pages/Jewelaries/Jewelaries/Jewelaries";
 import Login from "./Pages/Login/Login";
+import Details from "./Pages/ProductDetails/Details";
 import Register from "./Pages/Register/Register";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Header from "./Pages/Shared/Header/Header";
@@ -28,6 +29,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/details/:id" element={<Details />} />
         </Routes>
         <Footer />
       </BrowserRouter>
