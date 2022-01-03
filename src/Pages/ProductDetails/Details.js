@@ -18,12 +18,12 @@ const Details = () => {
     
     console.log(details);
     const description = details?.description;
-    const shortDescription = description?.slice(0, 200);
+    // const shortDescription = description.slice(0, 200);
     return (
         <div style={{minHeight: '80vh'}}>
             <div className="details">
                 <div className='details-header'>
-                <h2>{details.title}</h2>
+                <h2>ok</h2>
                 </div>
                 <div className="main-details flex gap-4">
                     <div style={{width:'50%'}}>
@@ -37,19 +37,19 @@ const Details = () => {
                         </div>
 
                         <p>{details?.average_rating} <span>({details?.total_rating})</span></p>
-                        <p className='short-des'>{shortDescription} ...</p>
+                        {/* <p className='short-des'>{shortDescription} ...</p> */}
+                        <p className='short-des'>{description} ...</p>
                         
                         <div className='product-count flex gap-5'>
                             <input type="number" />
                             <button>ADD TO CART</button>
                         </div>
-                        <p style={{paddingTop:'16px'}}>Available Products {details?.available_products}</p>
-
-                        <h5 className='details-category'>FOR: <span className='details-span'>{details?.for}</span></h5>
-                        <h5 className='details-category'>CATEGORY: <span className='details-span'>{details?.category}</span></h5>
+                        
+                        <h5>FOR: <span>{details?.for}</span></h5>
+                        <h5>CATEGORY: <span>{details?.category}</span></h5>
 
                         <div>
-                            {/* <h5>{details?.available_colors}</h5> */}
+                            <h5>{details?.available_colors}</h5>
                         </div>
                     </div>
                 </div>
