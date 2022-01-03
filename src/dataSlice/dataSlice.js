@@ -21,6 +21,14 @@ export const getProducts = createAsyncThunk(
         return response.data;
     }
 )
+export const getAllProducts = createAsyncThunk(
+    'data/getAllProducts',
+    async () => {
+        console.log('dfffdfedfd');
+        const response = await axios.get(`http://localhost:5000/products`);
+        return response.data;
+    }
+)
 
 export const dataSlice = createSlice({
     name: 'data',
@@ -68,6 +76,13 @@ export const dataSlice = createSlice({
             .addCase(getProducts.fulfilled, (state, action) => {
                 state.allProducts = action.payload;
                 state.viewProducts = action.payload
+                state.loading = false;
+            })
+            .addCase(getAllProducts.pending, (state, action) => {
+                state.loading = true;
+            })
+            .addCase(getAllProducts.fulfilled, (state, action) => {
+                state.viewProducts = action.payload;
                 state.loading = false;
             })
     },

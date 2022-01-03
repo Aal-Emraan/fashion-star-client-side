@@ -8,14 +8,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from '../../../dataSlice/dataSlice';
 import { NavLink } from 'react-router-dom';
-
-const GlassCard = props => {
+const DashboardCard = (props) => {
     const { title, _id, img, description, available_colors, average_rating, regular_price } = props.data;
     const dispatch = useDispatch()
     return (
-        <Grid item sm={12} md={4}>
+        <Grid item sm={12} md={6}>
             <Card sx={{ height: '100%' }}>
                 <CardMedia
                     component="img"
@@ -40,12 +38,11 @@ const GlassCard = props => {
                     </div>
                 </CardContent>
                 <CardActions className='flex justify-between'>
-                    <Button onClick={() => dispatch(addToCart(props.data))}>Add to Cart</Button>
-                    <Button component={NavLink} to={`/glasses/${_id}`}>See Details </Button>
+
                 </CardActions>
             </Card>
         </Grid>
     );
 };
 
-export default GlassCard;
+export default DashboardCard;
