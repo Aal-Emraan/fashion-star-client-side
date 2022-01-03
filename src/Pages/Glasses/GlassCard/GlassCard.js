@@ -34,7 +34,7 @@ const GlassCard = props => {
                         <Rating
                             name="simple-controlled"
                             value={average_rating}
-                            reading
+                            readOnly
                         />
                     </div>
                 </CardContent>
