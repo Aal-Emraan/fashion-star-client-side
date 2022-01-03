@@ -4,7 +4,7 @@ import Cart from "./Pages/Cart/Cart";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Glasses from "./Pages/Glasses/Glasses/Glasses";
 import Home from "./Pages/Home/Home";
-import Jewelaries from "./Pages/Jewelaries/Jewelaries/Jewelaries";
+import Jewellery from "./Pages/Jewellery/Jewellery/Jewellery";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import Footer from "./Pages/Shared/Footer/Footer";
@@ -21,7 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/watches" element={<Watches />} />
           <Route path="/glasses" element={<Glasses />} />
-          <Route path="/jewelaries" element={<Jewelaries />} />
+          <Route path="/Jewellery" element={<Jewellery />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />

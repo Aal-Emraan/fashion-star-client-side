@@ -676,5 +676,25 @@
         "free_home_delivery": "no",
         "for": "women",
         "available_products": 151
-    }
+    },
+    {
+        "tags": [
+          "swiper"
+        ],
+        "scripts": {
+          "start": "vite",
+          "dev": "vite",
+          "build": "vite build"
+        },
+        "name": "swiper-autoplay-react",
+        "license": "MIT",
+        "devDependencies": {
+          "vite": "^2.5.0"
+        },
+        "dependencies": {
+          "swiper": "^7.0.0",
+          "react-dom": "17.0.1",
+          "react": "17.0.1"
+        }
+      }
 ]
