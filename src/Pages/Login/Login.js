@@ -3,8 +3,11 @@ import "./Login.css";
 import google from "../../img/google.png";
 import facebook from "../../img/facebook.png";
 import { Link } from "react-router-dom";
+import useFirebase from "../../hooks/useFirebase";
 
 const Login = () => {
+  const { googlSignIn } = useFirebase;
+
   const handleSubmit = (e) => {
     alert("form submitted.");
     e.preventDefault();
@@ -64,6 +67,7 @@ const Login = () => {
           </p>
           <div className="flex justify-between mt-4 px-10">
             <button
+              onClick={googlSignIn}
               id="google"
               className="bg-white rounded-full p-3 border-2 flex items-center space-x-2"
             >
