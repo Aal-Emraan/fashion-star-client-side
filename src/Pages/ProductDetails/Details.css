@@ -36,12 +36,12 @@
     font-family: sans-serif;
     padding-bottom: 3%;
 }
-.product-count input{
+.product-count input {
     width: 9%;
     border: 1px solid #999999;
-    font-size: 20px;
+    font-size: 17px;
     color: black;
-    padding: 0px 7px;
+    padding: 6px 7px;
     border-radius: 4px;
 }
 .product-count button {
@@ -58,7 +58,7 @@
     
 }
 .details-category {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     color: #494343;
     border-bottom: 1px solid #bdbbbb;
@@ -66,7 +66,22 @@
     padding: 6px 0 5px;
 }
 .details-span{
-    font-size:20px;
+    font-size:24px;
     color:#c084fc;
     font-weight:400;
+}
+.relate-products {
+    padding: 0 7%;
+    margin-bottom: 5%;
+}
+.related-product-div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px 52px;
+}
+.relate-products h2 {
+    margin: 4% 0 4%;
+    font-size: 40px;
+    font-family: emoji;
+    border-bottom: 4px solid #e7ceac;
 }
