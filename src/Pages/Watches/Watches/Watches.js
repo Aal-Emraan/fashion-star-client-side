@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import "./Watches.css";
 import useProducts from "../../../Hooks/useProducts";
 import "./Watches.css";
 import WatchesSingle from "./WatchesSingle/WatchesSingle";
@@ -8,6 +9,10 @@ const Watches = () => {
   // let selectedProducts = products;
   const [product, setProduct] = useState(products);
   console.log(products);
+
+  useEffect(() => {
+    setProduct(products);
+  }, [products]);
 
   const allSelect = () => {
     // selectedProducts = products;
