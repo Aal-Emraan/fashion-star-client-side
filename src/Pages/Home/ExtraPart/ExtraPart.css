@@ -1,0 +1,22 @@
+.g{
+    display: flex;
+    padding: 4px;
+}
+.pri{
+    display: flex;
+}
+.price1{
+    font-size: 18px;
+    padding-left: 0;
+    padding-right: 10px;
+    color: #999;
+    font-weight: 300;
+    text-decoration: line-through;
+}
+.price2 {
+    color: #c29958;
+    font-weight: 300;
+    font-size: 18px;
+    padding-left: 0;
+    padding-right: 10px;
+}
