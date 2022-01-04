@@ -12,7 +12,8 @@ import UpdateCard from "./Pages/Dashboard/DashboardComponents/UpdateCard/UpdateC
 import GlassesDetails from "./Pages/Glasses/GlasseDetails/GlassesDetails";
 import Glasses from "./Pages/Glasses/Glasses/Glasses";
 import Home from "./Pages/Home/Home";
-import Jewelaries from "./Pages/Jewelaries/Jewelaries/Jewelaries";
+import JewelleryDetails from "./Pages/Jewellery/Details/JewelleryDetails";
+import Jewellery from "./Pages/Jewellery/Jewellery/Jewellery";
 import Login from "./Pages/Login/Login";
 import Details from "./Pages/ProductDetails/Details";
 import Register from "./Pages/Register/Register";
@@ -32,7 +33,8 @@ function App() {
           <Route path="/watches" element={<Watches />} />
           <Route path="/glasses" element={<Glasses />} />
           <Route path="/glasses/:id" element={<GlassesDetails />} />
-          <Route path="/jewelaries" element={<Jewelaries />} />
+          <Route path="/jewelleries" element={<Jewellery />} />
+          <Route path="/jewelleries/:id" element={<JewelleryDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="/dashboard" element={<AllProducts></AllProducts>} />

@@ -1,0 +1,48 @@
+.overlay1{
+    width: 43%;
+    height: 43%;
+    /* background: linear-gradient(rgba(161, 159, 159, 0.7),rgba(161, 159, 159, 0.7)); */
+    position: absolute;
+    top: 84px;
+}
+.content1{
+    width: 60%;
+    margin: 70px auto 0;
+    text-align: right;
+}
+.overlay2{
+    width: 43%;
+    height: 43%;
+    background: linear-gradient(rgba(161, 159, 159, 0.7),rgba(161, 159, 159, 0.7));
+    position: absolute;
+    top: 84px;
+}
+.content2{
+    width: 60%;
+    margin: 70px auto 0;
+    text-align: right;
+}
+.overlay3{
+    width: 43%;
+    height: 43%;
+    background: linear-gradient(rgba(161, 159, 159, 0.7),rgba(161, 159, 159, 0.7));
+    position: absolute;
+    top: 342px;
+}
+.content3{
+    width: 60%;
+    margin: 70px auto 0;
+    text-align: right;
+}
+.overlay4{
+    width: 43%;
+    height: 43%;
+    /* background: linear-gradient(rgba(161, 159, 159, 0.7),rgba(161, 159, 159, 0.7)); */
+    position: absolute;
+    top: 342px;
+}
+.content4{
+    width: 60%;
+    margin: 70px auto 0;
+    text-align: right;
+}
