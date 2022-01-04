@@ -3,6 +3,7 @@ import GlassesHome from "../Glasses/GlassesHome/GlassesHome";
 import JewelleriesHome from "../Jewelaries/JewelariesHome/JewelleriesHome";
 import WatchesHome from "../Watches/WatchesHome/WatchesHome";
 import Banner from "./Banner/Banner";
+import ExtraPart from "./ExtraPart/ExtraPart";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <WatchesHome />
       <GlassesHome />
       <JewelleriesHome />
+      <ExtraPart />
     </div>
   );
 };

@@ -1,0 +1,16 @@
+.pd:hover{
+    border: 1px solid rgb(104, 79, 40);
+    background: rgb(117, 116, 114) ;
+    background: -moz-linear-gradient(left, rgb(117, 116, 114) 0%, rgb(43, 41, 40) 100%);
+    background: -webkit-linear-gradient(left, rgb(117, 116, 114) 0%, rgb(54, 53, 51) 100%);
+    background: linear-gradient(to right, rgb(117, 116, 114) 0%, rgb(61, 60, 58) 100%);
+    color: white;
+}
+.pd{
+    border: 1px solid rgb(104, 79, 40);
+    background: rgb(194, 153, 88) ;
+    background: -moz-linear-gradient(left, rgb(194, 153, 88) 0%, rgb(104, 79, 40) 100%);
+    background: -webkit-linear-gradient(left, rgb(194, 153, 88) 0%, rgb(104, 79, 40) 100%);
+    background: linear-gradient(to right, rgb(194, 153, 88) 0%, rgb(104, 79, 40) 100%);
+    color: white;
+}

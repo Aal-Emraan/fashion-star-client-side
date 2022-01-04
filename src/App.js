@@ -17,6 +17,7 @@ import JewelleryDetails from "./Pages/Jewellery/Details/JewelleryDetails";
 import Jewellery from "./Pages/Jewellery/Jewellery/Jewellery";
 import Login from "./Pages/Login/Login";
 import MyOrders from "./Pages/MyOrders/MyOrders";
+import MainProducts from "./Pages/MainProducts/MainProducts";
 import Details from "./Pages/ProductDetails/Details";
 import Register from "./Pages/Register/Register";
 import AdminRoute from "./Pages/Shared/AdminRoute/AdminRoute";
@@ -34,6 +35,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/allproducts" element={<AllProducts />} />
+          <Route path="/mainproducts" element={<MainProducts />} />
           <Route path="/watches" element={<Watches />} />
           <Route path="/glasses" element={<Glasses />} />
           <Route

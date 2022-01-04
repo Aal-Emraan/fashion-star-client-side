@@ -1,0 +1,12 @@
+.card3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.card4:hover{
+    transform: translate(0%,-5%);
+    transition: 1s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.card4{
+    transition: all 0.5s ease;
+  }

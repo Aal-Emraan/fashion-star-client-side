@@ -19,7 +19,7 @@ const Navbar = () => {
         </div>
         <div className="md:flex space-x-10 hidden">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/allproducts">All Products</NavLink>
+          <NavLink to="/mainproducts">All Products</NavLink>
           <NavLink to="/watches">Watches</NavLink>
           <NavLink to="/glasses">Glasses</NavLink>
           <NavLink to="/jewelaries">Jewelaries</NavLink>
