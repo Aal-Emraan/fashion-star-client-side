@@ -44,7 +44,7 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/jewelaries" element={<Jewelaries />} />
+          <Route path="/jewelaries" element={<Jewellery />} />
           <Route
             path="/cart"
             element={
