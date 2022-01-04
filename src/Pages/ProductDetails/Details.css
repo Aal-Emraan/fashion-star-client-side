@@ -1,0 +1,87 @@
+.main-details {
+    padding: 3% 6%;
+}
+.details-header {
+    background: antiquewhite;
+    margin-top: 2px;
+    padding: 0 3%;
+}
+.details-header h2 {
+  padding: 2% 0;
+  font-size: 20px;
+}
+.details-content h4 {
+    color: #413b36;
+    font-size: 34px;
+    font-weight: 700;
+    padding: 6% 0 7%;
+}
+.dis-price {
+    color: #3f3936;
+    font-size: 31px;
+    margin-top: -13px;
+    font-weight: 800;
+    padding-bottom: 1%;
+}
+.reg-price{
+    color: #debfaf;
+    font-size: 20px;
+    text-decoration: line-through;
+}
+.short-des {
+    width: 85%;
+    font-size: 19px;
+    color: #695d5e;
+    padding-top: 3%;
+    font-family: sans-serif;
+    padding-bottom: 3%;
+}
+.product-count input {
+    width: 9%;
+    border: 1px solid #999999;
+    font-size: 17px;
+    color: black;
+    padding: 6px 7px;
+    border-radius: 4px;
+}
+.product-count button {
+    background-color: #c084fc;
+    padding: 0px 16px;
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0px 1px 2px 1px #00000094;
+    border-radius: 3px;
+}
+.product-count button:hover {
+    background-color: #3441d8;
+    
+}
+.details-category {
+    font-size: 20px;
+    font-weight: 700;
+    color: #494343;
+    border-bottom: 1px solid #bdbbbb;
+    width: 85%;
+    padding: 6px 0 5px;
+}
+.details-span{
+    font-size:24px;
+    color:#c084fc;
+    font-weight:400;
+}
+.relate-products {
+    padding: 0 7%;
+    margin-bottom: 5%;
+}
+.related-product-div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px 52px;
+}
+.relate-products h2 {
+    margin: 4% 0 4%;
+    font-size: 40px;
+    font-family: emoji;
+    border-bottom: 4px solid #e7ceac;
+}

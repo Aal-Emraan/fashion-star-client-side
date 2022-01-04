@@ -3,15 +3,15 @@ import "./Login.css";
 import google from "../../img/google.png";
 import facebook from "../../img/facebook.png";
 import { Link } from "react-router-dom";
-import useFirebase from "../../hooks/useFirebase";
+// import useFirebase from "../../Hooks/useFirebase";
 
 const Login = () => {
-  const { googlSignIn } = useFirebase;
+  // const { googlSignIn } = useFirebase;
 
-  const handleSubmit = (e) => {
-    alert("form submitted.");
-    e.preventDefault();
-  };
+  // const handleSubmit = (e) => {
+  //   alert("form submitted.");
+  //   e.preventDefault();
+  // };
 
   return (
     <div id="login" className="min-h-screen">
@@ -20,7 +20,7 @@ const Login = () => {
           <h1 className="text-white font-semibold text-6xl text-center mb-10">
             Login
           </h1>
-          <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
+          <form className="flex flex-col space-y-5">
             <input
               className="rounded-full p-5"
               type="email"
@@ -67,7 +67,6 @@ const Login = () => {
           </p>
           <div className="flex justify-between mt-4 px-10">
             <button
-              onClick={googlSignIn}
               id="google"
               className="bg-white rounded-full p-3 border-2 flex items-center space-x-2"
             >

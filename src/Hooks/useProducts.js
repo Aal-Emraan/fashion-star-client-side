@@ -1,17 +1,16 @@
-const { useEffect } = require("react")
-const { useState } = require("react")
+const { useEffect } = require("react");
+const { useState } = require("react");
 
+const useProducts = () => {
+  const [products, setProducts] = useState([]);
 
-const useProducts = () =>{
-    const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch("https://thawing-plateau-57038.herokuapp.com/watches")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
 
-    useEffect( ()=>{
-            fetch('http://localhost:5000/watches')
-            .then(res => res.json())
-            .then(data => setProducts(data));
-    }, []);
-
-    return [products];
-} 
+  return [products];
+};
 
 export default useProducts;

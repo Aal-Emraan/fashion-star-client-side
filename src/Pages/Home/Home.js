@@ -1,7 +1,6 @@
 import React from "react";
 import GlassesHome from "../Glasses/GlassesHome/GlassesHome";
-import JewelariesHome from "../Jewelaries/JewelariesHome/JewelariesHome";
-import Header from "../Shared/Header/Header";
+import JewelleryHome from "../Jewelaries/JewelariesHome/JewelleryHome";
 import WatchesHome from "../Watches/WatchesHome/WatchesHome";
 import Banner from "./Banner/Banner";
 
@@ -11,7 +10,7 @@ const Home = () => {
       <Banner />
       <WatchesHome />
       <GlassesHome />
-      <JewelariesHome />
+      <JewelleryHome />
     </div>
   );
 };
