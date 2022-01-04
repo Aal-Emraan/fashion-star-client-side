@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Register.css";
 import google from "../../img/google.png";
 import facebook from "../../img/facebook.png";
-
+import { useLocation, useNavigate } from 'react-router';
+import { useForm } from "react-hook-form";
+import useFirebase from "../../Hooks/useFirebase";
 const Register = () => {
+  const { handleRegister } = useFirebase();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const password = useRef({});
+  const location = useLocation();
+  const navigate = useNavigate();
+  password.current = watch("password", "");
+  const onSubmit = data => {
+    console.log('click', data);
+    handleRegister({ name: data.name, email: data.email, password: data.password, location, navigate });
+  }
   return (
     <div id="signup" className="min-h-screen bg-slate-400">
       <div className="container mx-auto">
@@ -12,39 +24,51 @@ const Register = () => {
           <h1 className="text-white font-semibold text-6xl text-center mb-10">
             Register
           </h1>
-          <form className="flex flex-col space-y-5">
+          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-5">
             <input
               className="rounded-full p-5"
               type="text"
-              name="Name"
-              id=""
               placeholder="Full name..."
+              {...register("name", { required: true })}
             />
+            {
+              errors.name && <div className="text-red-600">*This filed is required</div>
+            }
             <input
               className="rounded-full p-5"
               type="email"
-              name="Email"
               placeholder="Your email..."
-              id=""
+              {...register("email", { required: true })}
             />
+            {
+              errors.email && <div className="text-red-600">*This filed is required</div>
+            }
             <input
               className="rounded-full p-5"
               type="password"
-              name="Password"
               placeholder="Password..."
-              id=""
+              {...register("password", { required: true, minLength: 6 })}
             />
+            {
+              errors.password && <div className="text-red-600">*password must be 6 length</div>
+            }
             <input
               className="rounded-full p-5"
               type="password"
-              name="Password"
               placeholder="Re-type password..."
-              id=""
+              {...register("password2", {
+                validate: value =>
+                  value === password.current || "The passwords do not match"
+              })}
             />
+            {
+              errors.password2 && <div className="text-red-600">*{errors.password2.message}</div>
+            }
             <input
               className="rounded-full p-5 bg-gray-500 text-2xl text-white"
               type="submit"
               value="Register"
+
             />
           </form>
           <p className="text-white my-3 px-4 text-center">

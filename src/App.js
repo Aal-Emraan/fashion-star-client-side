@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import useFirebase from "./Hooks/useFirebase";
 import Cart from "./Pages/Cart/Cart";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import AddProduct from "./Pages/Dashboard/DashboardComponents/AddProduct/AddProduct";
@@ -15,13 +16,17 @@ import Home from "./Pages/Home/Home";
 import JewelleryDetails from "./Pages/Jewellery/Details/JewelleryDetails";
 import Jewellery from "./Pages/Jewellery/Jewellery/Jewellery";
 import Login from "./Pages/Login/Login";
+import MyOrders from "./Pages/MyOrders/MyOrders";
 import Details from "./Pages/ProductDetails/Details";
 import Register from "./Pages/Register/Register";
+import AdminRoute from "./Pages/Shared/AdminRoute/AdminRoute";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navbar from "./Pages/Shared/Navbar/Navbar";
+import PrivateRoute from "./Pages/Shared/PrivateRoute/PrivateRoute";
 import Watches from "./Pages/Watches/Watches/Watches";
 
 function App() {
+  const { handleRegister } = useFirebase();
   return (
     <div className="App">
       <BrowserRouter>
@@ -31,41 +36,108 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/watches" element={<Watches />} />
           <Route path="/glasses" element={<Glasses />} />
-          <Route path="/glasses/:id" element={<GlassesDetails />} />
-          <Route path="/jewelleries" element={<Jewellery />} />
-          <Route path="/jewelleries/:id" element={<JewelleryDetails />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/dashboard" element={<Dashboard />}>
-            <Route path="/dashboard" element={<AllProducts></AllProducts>} />
+          <Route
+            path="/glasses/:id"
+            element={
+              <PrivateRoute>
+                <GlassesDetails />
+              </PrivateRoute>
+            }
+          />
+          <Route path="/jewelaries" element={<Jewelaries />} />
+          <Route
+            path="/cart"
+            element={
+              <PrivateRoute>
+                <Cart />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <AdminRoute>
+                <Dashboard />
+              </AdminRoute>
+            }
+          >
+            <Route
+              path="/dashboard"
+              element={
+                <AdminRoute>
+                  <AllProducts></AllProducts>
+                </AdminRoute>
+              }
+            />
             <Route
               path="/dashboard/allProducts"
-              element={<AllProducts></AllProducts>}
+              element={
+                <AdminRoute>
+                  <AllProducts></AllProducts>
+                </AdminRoute>
+              }
             />
             <Route
               path="/dashboard/allWatches"
-              element={<AllWatches></AllWatches>}
+              element={
+                <AdminRoute>
+                  <AllWatches></AllWatches>
+                </AdminRoute>
+              }
             />
             <Route
               path="/dashboard/allGlasses"
-              element={<AllGlasses></AllGlasses>}
+              element={
+                <AdminRoute>
+                  <AllGlasses></AllGlasses>
+                </AdminRoute>
+              }
             />
             <Route
               path="/dashboard/allJewellers"
-              element={<AllJewellers></AllJewellers>}
+              element={
+                <AdminRoute>
+                  <AllJewellers></AllJewellers>
+                </AdminRoute>
+              }
             />
             <Route
               path="/dashboard/allOrders"
-              element={<AllOrders></AllOrders>}
+              element={
+                <AdminRoute>
+                  <AllOrders></AllOrders>
+                </AdminRoute>
+              }
             />
             <Route
               path="/dashboard/update/:id"
-              element={<UpdateCard></UpdateCard>}
+              element={
+                <AdminRoute>
+                  <UpdateCard></UpdateCard>
+                </AdminRoute>
+              }
             />
             <Route path="/dashboard/addproduct" element={<AddProduct />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/details/:id" element={<Details />} />
+          <Route
+            path="/myorders"
+            element={
+              <PrivateRoute>
+                <MyOrders />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/details/:id"
+            element={
+              <PrivateRoute>
+                <Details />
+              </PrivateRoute>
+            }
+          />
         </Routes>
         <Footer />
       </BrowserRouter>
