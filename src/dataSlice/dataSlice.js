@@ -48,7 +48,7 @@ export const isAdmin = createAsyncThunk(
     'data/isAdmin',
     async (info) => {
         console.log('getting');
-        const response = await axios.get(`http://localhost:5000/user/${info.email}`);
+        const response = await axios.get(`https://fashionstar-5bdad.web.app/user/${info.email}`);
         return response.data
     }
 )

@@ -13,7 +13,7 @@ const useFirebase = () => {
   const auth = getAuth();
 
   const saveUser = data => {
-    axios.post('http://localhost:5000/user', data)
+    axios.post('https://fashionstar-5bdad.web.app/user', data)
   }
   const googleSignIn = () => {
     const googleProvider = new GoogleAuthProvider();

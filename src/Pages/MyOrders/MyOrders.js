@@ -8,7 +8,7 @@ const MyOrders = () => {
     const [allData, setAllData] = useState([]);
     const data = useSelector(selectData);
     useEffect(() => {
-        axios.get(`http://localhost:5000/orders/${data.user.email}`)
+        axios.get(`https://fashionstar-5bdad.web.app/orders/${data.user.email}`)
             .then(res => setAllData(res.data))
     }, [])
     console.log(allData);

@@ -29,7 +29,7 @@ const Cart = () => {
       newData = [...newData, { cart: carts[i], user }]
     }
     console.log(newData);
-    axios.post('http://localhost:5000/orders', newData)
+    axios.post('https://fashionstar-5bdad.web.app/orders', newData)
       .then(res => {
         if (res.data.acknowledged) {
           dispatch(removeAllCart())
