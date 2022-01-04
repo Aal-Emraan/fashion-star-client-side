@@ -2,8 +2,10 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useSelector } from 'react-redux';
-import { selectData } from '../../../dataSlice/dataSlice'
+import { logout, selectData } from '../../../dataSlice/dataSlice'
+import useFirebase from "../../../Hooks/useFirebase";
 const Navbar = () => {
+  const { handleSignOut } = useFirebase();
   // get cart value form redux
   const data = useSelector(selectData)
   return (
@@ -20,13 +22,18 @@ const Navbar = () => {
           <NavLink to="/watches">Watches</NavLink>
           <NavLink to="/glasses">Glasses</NavLink>
           <NavLink to="/jewelaries">Jewelaries</NavLink>
-          <NavLink to="/myorders">My Orders</NavLink>
+          {
+            data.user.email && <NavLink to="/myorders">My Orders</NavLink>
+          }
           <NavLink to="/dashboard">Dashboard</NavLink>
           <NavLink to="/cart">
             <ShoppingCartIcon></ShoppingCartIcon>
             <sup className="text-red-400">{data.cart.length}</sup>
           </NavLink>
-          <NavLink to="/login">Login</NavLink>
+          {
+
+            data?.user.email ? <button onClick={handleSignOut}>Logout</button> : <NavLink to="/login">Login</NavLink>
+          }
         </div>
       </nav>
     </div>

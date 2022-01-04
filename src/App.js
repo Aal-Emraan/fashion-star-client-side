@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import useFirebase from "./Hooks/useFirebase";
 import Cart from "./Pages/Cart/Cart";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import AllGlasses from "./Pages/Dashboard/DashboardComponents/AllGlasses/AllGlasses";
@@ -20,6 +21,7 @@ import Navbar from "./Pages/Shared/Navbar/Navbar";
 import Watches from "./Pages/Watches/Watches/Watches";
 
 function App() {
+  const { handleRegister } = useFirebase();
   return (
     <div className="App">
       <BrowserRouter>

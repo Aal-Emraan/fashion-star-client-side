@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 const initialState = {
+    user: {},
+    admin: false,
     watches: [],
     glasses: [],
     jewellers: [],
@@ -41,6 +43,14 @@ export const deleteProducts = createAsyncThunk(
         return response.data;
     }
 );
+export const isAdmin = createAsyncThunk(
+    'data/isAdmin',
+    async (info) => {
+        console.log('getting');
+        const response = await axios.get(`http://localhost:5000/user/${info.email}`);
+        return response.data
+    }
+)
 
 export const dataSlice = createSlice({
     name: "data",
@@ -50,7 +60,7 @@ export const dataSlice = createSlice({
             state.user = action.payload;
         },
         logout: (state, action) => {
-            state.user = null;
+            state.user = {};
         },
         changeViewProducts: (state, action) => {
             console.log(action.payload);
@@ -106,7 +116,15 @@ export const dataSlice = createSlice({
                 state.viewProducts = state?.viewProducts?.filter(
                     (product) => product._id !== action.payload._id
                 );
-            });
+            })
+            .addCase(isAdmin.pending, (state, action) => {
+
+                state.loading = true;
+            })
+            .addCase(isAdmin.fulfilled, (state, action) => {
+                state.admin = action.payload.admin;
+                state.loading = false;
+            })
     },
 });
 export const {

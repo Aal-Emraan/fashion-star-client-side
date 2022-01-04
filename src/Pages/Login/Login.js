@@ -3,16 +3,17 @@ import "./Login.css";
 import google from "../../img/google.png";
 import facebook from "../../img/facebook.png";
 import { Link } from "react-router-dom";
-// import useFirebase from "../../Hooks/useFirebase";
-
+import useFirebase from "../../Hooks/useFirebase";
+import { useLocation, useNavigate } from 'react-router';
+import { useForm } from "react-hook-form";
 const Login = () => {
-  // const { googlSignIn } = useFirebase;
-
-  // const handleSubmit = (e) => {
-  //   alert("form submitted.");
-  //   e.preventDefault();
-  // };
-
+  const { googleSignIn, logInWithEmail } = useFirebase();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const onSubmit = data => {
+    logInWithEmail({ ...data, location, navigate })
+  }
   return (
     <div id="login" className="min-h-screen">
       <div className="container mx-auto">
@@ -20,20 +21,18 @@ const Login = () => {
           <h1 className="text-white font-semibold text-6xl text-center mb-10">
             Login
           </h1>
-          <form className="flex flex-col space-y-5">
+          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-5">
             <input
               className="rounded-full p-5"
               type="email"
-              name="email"
+              {...register("email", { required: true })}
               placeholder="Your email..."
-              id=""
             />
             <input
               className="rounded-full p-5"
               type="password"
-              name="password"
+              {...register("password", { required: true, minLength: 6 })}
               placeholder="password"
-              id=""
             />
             <div className="flex justify-between px-5">
               <div>
@@ -50,7 +49,6 @@ const Login = () => {
               <p className="text-white">Forget Password?</p>
             </div>
             <input
-              id="submit"
               className=" rounded-full p-5 text-white text-2xl font-semibold cursor-pointer"
               type="submit"
               value="Login"
@@ -67,6 +65,7 @@ const Login = () => {
           </p>
           <div className="flex justify-between mt-4 px-10">
             <button
+              onClick={googleSignIn}
               id="google"
               className="bg-white rounded-full p-3 border-2 flex items-center space-x-2"
             >
