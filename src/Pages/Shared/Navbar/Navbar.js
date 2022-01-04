@@ -12,7 +12,7 @@ const Navbar = () => {
         </div>
         <div className="flex space-x-10">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/allproducts">All Products</NavLink>
+          <NavLink to="/mainproducts">All Products</NavLink>
           <NavLink to="/watches">Watches</NavLink>
           <NavLink to="/glasses">Glasses</NavLink>
           <NavLink to="/jewelleries">jewelleries</NavLink>

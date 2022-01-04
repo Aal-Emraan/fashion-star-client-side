@@ -15,6 +15,7 @@ import Home from "./Pages/Home/Home";
 import JewelleryDetails from "./Pages/Jewellery/Details/JewelleryDetails";
 import Jewellery from "./Pages/Jewellery/Jewellery/Jewellery";
 import Login from "./Pages/Login/Login";
+import MainProducts from "./Pages/MainProducts/MainProducts";
 import Details from "./Pages/ProductDetails/Details";
 import Register from "./Pages/Register/Register";
 import Footer from "./Pages/Shared/Footer/Footer";
@@ -30,6 +31,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/allproducts" element={<AllProducts />} />
+          <Route path="/mainproducts" element={<MainProducts />} />
           <Route path="/watches" element={<Watches />} />
           <Route path="/glasses" element={<Glasses />} />
           <Route path="/glasses/:id" element={<GlassesDetails />} />
