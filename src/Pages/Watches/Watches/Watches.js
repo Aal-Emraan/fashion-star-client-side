@@ -76,7 +76,7 @@ const Watches = () => {
             </div>
           </div>
 
-          <div className="Watches-products">
+          <div className="Watches-products grid grid-cols-1 md:grid-cols-4 gap-5">
             {product.map((product) => (
               <WatchesSingle
                 key={product.title}

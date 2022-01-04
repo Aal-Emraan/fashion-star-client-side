@@ -10,7 +10,7 @@ const GlassesHome = () => {
           className="w-full h-full flex justify-center items-center"
         >
           <div className="text-center ">
-            <h2 className="text-6xl mb-4 text-gray-100 font-mono ">
+            <h2 className="text-6xl mb-10 md:mb-4 text-gray-100 font-mono ">
               We Have World Best Glasses
             </h2>
             <h6 className="text-xl mb-4 text-gray-200 font-light">

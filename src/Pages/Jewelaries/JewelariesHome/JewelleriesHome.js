@@ -17,7 +17,7 @@ const JewelleriesHome = () => {
                     paddingLeft: "80px",
                     color: "#3a3938",
                   }}
-                  className="slide-title bn-title "
+                  className="slide-title bn-title j"
                 >
                   Family Jewellery <br /> Collection
                 </h2>

@@ -1,3 +1,4 @@
+import { Rating } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
@@ -36,36 +37,53 @@ const Details = () => {
 
   return (
     <div style={{ minHeight: "80vh" }}>
-      <div className="details">
-        <div className="details-header">
+      <div className="details mt-10">
+        <div className="details-header p-3 shadow-md container mx-auto text-xl text-blue-600">
           <h2>{details?.title}</h2>
         </div>
-        <div className="main-details flex gap-4">
-          <div style={{ width: "50%" }}>
-            <img style={{ width: "550px" }} src={details.img} alt="" />
+        <div
+          className="main-details grid grid-cols-1 md:grid-cols-2 shadow-md container
+        mx-auto"
+        >
+          <div>
+            <img src={details.img} alt="" />
           </div>
-          <div className="details-content" style={{ width: "50%" }}>
-            <h4>{details?.title}</h4>
-            <div className="flex gap-5">
-              <p className="reg-price">${details?.regular_price}.00</p>
-              <p className="dis-price">${details?.discount_price}.00</p>
+          <div className="details-content p-5">
+            <h4 className="text-3xl font-semibold my-3 text-gray-800">
+              {details?.title}
+            </h4>
+            <div className="flex gap-5 my-2 items-baseline mt-2">
+              <p className="text-yellow-600 line-through">
+                ${details?.regular_price}.00
+              </p>
+              <p className="text-xl font-semibold">
+                ${details?.discount_price}.00
+              </p>
             </div>
 
-            <p>
-              {details?.average_rating} <span>({details?.total_rating})</span>
+            <p className="flex items-center space-x-2">
+              <Rating
+                name="simple-controlled"
+                value={parseInt(details?.average_rating)}
+                readOnly
+              />
+              <span>({details?.total_rating})</span>
             </p>
-            <p className="short-des">{shortDescription} ...</p>
+            <p className="text-xl text-gray-600 my-6">{shortDescription} ...</p>
 
-            <div className="product-count flex gap-5 mb-7">
-              <input type="number" />
-              <button>ADD TO CART</button>
-              <button>CHECKOUT</button>
+            <div className="flex space-x-5 text-white font-semibold">
+              <button className="bg-purple-400 p-2 rounded shadow-md">
+                ADD TO CART
+              </button>
+              <button className="bg-purple-400 p-2 rounded shadow-md">
+                CHECKOUT
+              </button>
             </div>
 
-            <h5 className="details-category">
-              FOR: <span className="details-span">{details?.for}</span>
+            <h5 className="text-2xl border-b my-4 text-gray-800">
+              For: <span className="">{details?.for}</span>
             </h5>
-            <h5 className="details-category">
+            <h5 className="text-2xl border-b my-4 text-gray-800">
               CATEGORY:{" "}
               <span className="details-span">{details?.category}</span>
             </h5>
@@ -76,7 +94,7 @@ const Details = () => {
 
         <div className="relate-products">
           <h2>Related Products</h2>
-          <div className="related-product-div">
+          <div className="related-product-div grid grid-cols-1 md:grid-cols-4 space-y-5">
             {productSlice.map((product) => (
               <RelatedDetails
                 key={product._id}

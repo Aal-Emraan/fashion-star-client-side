@@ -3,12 +3,12 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="bg-black py-10">
+    <div className="bg-black px-3 md:px-0 py-10">
       <div className="container mx-auto border border-orange-300 p-5 rounded-xl">
-        <div className="grid grid-cols-3 text-white py-5">
+        <div className="grid grid-cols-1 space-y-10 md:grid-cols-3 text-white py-5">
           <div>
             <h3 className="text-xl">Products & Services</h3>
-            <ul className=" mt-10">
+            <ul className=" mt-5 md:mt-10">
               <li className="font-mono mb-3">Watches</li>
               <li className="font-mono mb-3">Glasses</li>
               <li className="font-mono mb-3">Jewelleries</li>
@@ -17,7 +17,7 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="text-xl">About Us</h3>
-            <ul className="mt-10">
+            <ul className="mt-5 md:mt-10">
               <li className="font-mono mb-3">Store Info</li>
               <li className="font-mono mb-3">Aftersell Services</li>
               <li className="font-mono mb-3">Privacy & Policy</li>
