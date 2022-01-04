@@ -1,14 +1,16 @@
 import { Button, Container, Grid } from "@mui/material";
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectData } from "../../dataSlice/dataSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { removeAllCart, selectData } from "../../dataSlice/dataSlice";
 import CartCard from "./CartCard/CartCard";
 import Table from '@mui/material/Table';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import TableBody from '@mui/material/TableBody';
+import axios from "axios";
 const Cart = () => {
-  const { cart: carts } = useSelector(selectData)
+  const { cart: carts, user } = useSelector(selectData);
+  const dispatch = useDispatch();
   let discount = 0;
   let normal_price = 0;
   let delivery = 0;
@@ -20,7 +22,22 @@ const Cart = () => {
     }
   });
   const total_cost = discount + delivery;
-  console.log(discount, normal_price);
+  const handleClick = () => {
+    let newData = [];
+    for (let i = 0; i < carts.length; i++) {
+      console.log(i);
+      newData = [...newData, { cart: carts[i], user }]
+    }
+    console.log(newData);
+    axios.post('http://localhost:5000/orders', newData)
+      .then(res => {
+        if (res.data.acknowledged) {
+          dispatch(removeAllCart())
+          alert('Successfully Orders')
+
+        }
+      })
+  }
   return (
     <div className="min-h-screen ">
       <Container maxWidth="xl">
@@ -64,7 +81,7 @@ const Cart = () => {
                     </TableRow>
                   </TableBody>
                 </div>
-                <Button sx={{ mt: 4, width: '100%' }} variant='contained'>Pay ${parseInt(total_cost)}</Button>
+                <Button onClick={handleClick} disabled={!carts.length} sx={{ mt: 4, width: '100%' }} variant='contained'>Pay ${parseInt(total_cost)}</Button>
               </div>
             </div>
           </Grid>

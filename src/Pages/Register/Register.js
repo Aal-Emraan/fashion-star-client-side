@@ -14,7 +14,7 @@ const Register = () => {
   const navigate = useNavigate();
   password.current = watch("password", "");
   const onSubmit = data => {
-    console.log('click');
+    console.log('click', data);
     handleRegister({ name: data.name, email: data.email, password: data.password, location, navigate });
   }
   return (

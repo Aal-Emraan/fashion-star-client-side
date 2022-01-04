@@ -16,8 +16,10 @@ import Jewelaries from "./Pages/Jewelaries/Jewelaries/Jewelaries";
 import Login from "./Pages/Login/Login";
 import Details from "./Pages/ProductDetails/Details";
 import Register from "./Pages/Register/Register";
+import AdminRoute from "./Pages/Shared/AdminRoute/AdminRoute";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navbar from "./Pages/Shared/Navbar/Navbar";
+import PrivateRoute from "./Pages/Shared/PrivateRoute/PrivateRoute";
 import Watches from "./Pages/Watches/Watches/Watches";
 
 function App() {
@@ -31,39 +33,39 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/watches" element={<Watches />} />
           <Route path="/glasses" element={<Glasses />} />
-          <Route path="/glasses/:id" element={<GlassesDetails />} />
+          <Route path="/glasses/:id" element={<PrivateRoute><GlassesDetails /></PrivateRoute>} />
           <Route path="/jewelaries" element={<Jewelaries />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/dashboard" element={<Dashboard />}>
-            <Route path="/dashboard" element={<AllProducts></AllProducts>} />
+          <Route path="/cart" element={<PrivateRoute><Cart /></PrivateRoute>} />
+          <Route path="/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>}>
+            <Route path="/dashboard" element={<AdminRoute><AllProducts></AllProducts></AdminRoute>} />
             <Route
               path="/dashboard/allProducts"
-              element={<AllProducts></AllProducts>}
+              element={<AdminRoute><AllProducts></AllProducts></AdminRoute>}
             />
             <Route
               path="/dashboard/allWatches"
-              element={<AllWatches></AllWatches>}
+              element={<AdminRoute><AllWatches></AllWatches></AdminRoute>}
             />
             <Route
               path="/dashboard/allGlasses"
-              element={<AllGlasses></AllGlasses>}
+              element={<AdminRoute><AllGlasses></AllGlasses></AdminRoute>}
             />
             <Route
               path="/dashboard/allJewellers"
-              element={<AllJewellers></AllJewellers>}
+              element={<AdminRoute><AllJewellers></AllJewellers></AdminRoute>}
             />
             <Route
               path="/dashboard/allOrders"
-              element={<AllOrders></AllOrders>}
+              element={<AdminRoute><AllOrders></AllOrders></AdminRoute>}
             />
             <Route
               path="/dashboard/update/:id"
-              element={<UpdateCard></UpdateCard>}
+              element={<AdminRoute><UpdateCard></UpdateCard></AdminRoute>}
             />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/details/:id" element={<Details />} />
+          <Route path="/details/:id" element={<PrivateRoute><Details /></PrivateRoute>} />
         </Routes>
         <Footer />
       </BrowserRouter>

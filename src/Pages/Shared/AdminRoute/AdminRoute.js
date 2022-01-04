@@ -4,19 +4,21 @@ import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router';
 import { selectData } from '../../../dataSlice/dataSlice';
 
-const PrivateRoute = ({ children }) => {
+const AdminRoute = ({ children }) => {
 
     const data = useSelector(selectData);
     let location = useLocation();
-
-    if (data.loading) {
+    console.log(data.admin);
+    if (data.adminLoading) {
         return <div className='flex justify-center items-center h-screen'>
             <CircularProgress />
         </div>
     }
     if (!data?.user?.email) {
-
         return <Navigate to="/login" state={{ from: location }} />;
+    }
+    if (!data.admin) {
+        return <Navigate to="/help" state={{ from: location }} />;
     }
     return (
         <>
@@ -25,4 +27,4 @@ const PrivateRoute = ({ children }) => {
     );
 };
 
-export default PrivateRoute;
+export default AdminRoute;

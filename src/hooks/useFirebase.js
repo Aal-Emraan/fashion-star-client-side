@@ -3,7 +3,7 @@ import { GoogleAuthProvider, signInWithPopup, getAuth, signOut, onAuthStateChang
 import { useState, useEffect } from 'react'
 import axios from "axios";
 import { useDispatch } from 'react-redux'
-import { isAdmin, login, logout, setLoading } from "../dataSlice/dataSlice";
+import { isAdmin, login, logout, setAdminLoading, setLoading } from "../dataSlice/dataSlice";
 initializeAuthentication();
 
 const useFirebase = () => {
@@ -42,7 +42,7 @@ const useFirebase = () => {
 
 
   const handleRegister = ({ email, password, name, navigate }) => {
-    console.log(email, navigate);
+    console.log(email, password,);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setAuthError('');
@@ -73,6 +73,7 @@ const useFirebase = () => {
   }
   useEffect(() => {
     dispatch(setLoading(true))
+    dispatch(setAdminLoading(true))
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // setUser(user);
@@ -84,13 +85,14 @@ const useFirebase = () => {
           uid: user.uid
         }))
         dispatch(isAdmin({ email: user.email }))
+        dispatch(setLoading(false))
       }
       else {
         dispatch(setLoading(false))
       }
 
     });
-  }, [auth]);
+  }, []);
 
   const handleSignOut = () => {
     signOut(auth).then(() => {

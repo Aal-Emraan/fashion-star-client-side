@@ -4,6 +4,7 @@ const initialState = {
     user: {},
     admin: false,
     watches: [],
+    adminLoading: true,
     glasses: [],
     jewellers: [],
     products: [],
@@ -13,7 +14,7 @@ const initialState = {
     men: [],
     female: [],
     kids: [],
-    loading: false,
+    loading: true,
 };
 
 export const getProducts = createAsyncThunk(
@@ -87,11 +88,17 @@ export const dataSlice = createSlice({
         setLoading: (state, action) => {
             state.loading = action.payload;
         },
+        setAdminLoading: (state, action) => {
+            state.adminLoading = action.payload;
+        },
         addToCart: (state, action) => {
             state.cart.push(action.payload);
         },
         removeFormCart: (state, action) => {
             state.cart = state.cart.filter(item => item._id !== action.payload)
+        },
+        removeAllCart: (state, action) => {
+            state.cart = [];
         }
     },
     extraReducers: (builder) => {
@@ -118,12 +125,11 @@ export const dataSlice = createSlice({
                 );
             })
             .addCase(isAdmin.pending, (state, action) => {
-
-                state.loading = true;
+                state.adminLoading = true;
             })
             .addCase(isAdmin.fulfilled, (state, action) => {
                 state.admin = action.payload.admin;
-                state.loading = false;
+                state.adminLoading = false;
             })
     },
 });
@@ -137,6 +143,8 @@ export const {
     setViewProducts,
     changeViewProducts,
     removeFormCart,
+    setAdminLoading,
+    removeAllCart,
 } = dataSlice.actions;
 export const selectData = (state) => state.data;
 
