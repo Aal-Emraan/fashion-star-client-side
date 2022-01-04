@@ -8,15 +8,16 @@ const Details = () => {
   const [details, setDetails] = useState({});
   const [products] = useProducts();
 
-  console.log(id);
+  console.log(products);
   const selectedCategory = products.filter(
-    (product) => product.category === details?.category
+    (product) => product?.category === details?.category
   );
+  console.log(selectedCategory);
   const selectedProducts = selectedCategory.filter(
-    (product) => product.for === details?.for
+    (product) => product?.for === details?.for
   );
   const selectedProducts2 = selectedProducts.filter(
-    (selectedProduct) => selectedProduct._id !== id
+    (selectedProduct) => selectedProduct?._id !== id
   );
   // const selectedProducts3 = selectedProducts2.filter(selectedProducts => selectedProducts.for !== details?.for);
   const productSlice = selectedProducts2.slice(0, 4);
@@ -33,6 +34,23 @@ const Details = () => {
 
   const description = details?.description;
   const shortDescription = description?.slice(0, 200);
+  let delivery;
+  let deliverySt;
+
+  if(details?.free_home_delivery === "YES" && "Yes" && "yes"){
+      delivery = "FREE DELIVERY"
+      deliverySt = {
+          color: "#379b70"
+          
+        };
+  }
+  else{
+      delivery = "DELIVERY FEE: $4.99"
+      deliverySt = {
+          color: "#b36363"
+          
+      };
+  }
 
   return (
     <div style={{ minHeight: "80vh" }}>
@@ -60,6 +78,11 @@ const Details = () => {
               <input type="number" />
               <button>ADD TO CART</button>
               <button>CHECKOUT</button>
+            </div>
+
+            <div style={{width: '85%'}} className="flex justify-between">
+                <p style={deliverySt}>{delivery}</p>
+                <p style={{color: '#26265f'}}>DELIVERY WITHIN 3 WORKING DAYS</p>
             </div>
 
             <h5 className="details-category">

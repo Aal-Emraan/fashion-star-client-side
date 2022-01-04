@@ -3,8 +3,21 @@ import "./Watches.css";
 import useProducts from "../../../Hooks/useProducts";
 import "./Watches.css";
 import WatchesSingle from "./WatchesSingle/WatchesSingle";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts, selectData, setLoading, changeViewProducts, setViewProducts } from "../../../dataSlice/dataSlice";
+
 
 const Watches = () => {
+
+  const dispatch = useDispatch();
+  const data = useSelector(selectData);
+  
+  useEffect(() => {
+    dispatch(getProducts({ category: 'watch' }))
+  }, []);
+
+  console.log(data);
+
   const [products] = useProducts();
   // let selectedProducts = products;
   const [product, setProduct] = useState(products);
@@ -46,28 +59,28 @@ const Watches = () => {
             <h2 style={{ width: "30%" }}>Watches For You</h2>
             <div style={{ width: "70%", textAlign: "end" }}>
               <button
-                onClick={allSelect}
+                onClick={() => dispatch(setViewProducts({ type: 'all' }))}
                 id="allProducts"
                 className="watches-content-btn"
               >
                 All Watches
               </button>
               <button
-                onClick={menSelect}
+                onClick={() => dispatch(changeViewProducts({ for: 'men' }))}
                 id="menProducts"
                 className="watches-content-btn"
               >
                 Men's Watches
               </button>
               <button
-                onClick={womenSelect}
+                onClick={() => dispatch(changeViewProducts({ for: 'women' }))}
                 id="womenProducts"
                 className="watches-content-btn"
               >
                 Women's Watches
               </button>
               <button
-                onClick={kidSelect}
+                onClick={() => dispatch(changeViewProducts({ for: 'kid' }))}
                 id="kidProducts"
                 className="watches-content-btn"
               >
@@ -77,7 +90,7 @@ const Watches = () => {
           </div>
 
           <div className="Watches-products">
-            {product.map((product) => (
+            {data.viewProducts.map((product) => (
               <WatchesSingle
                 key={product.title}
                 product={product}
