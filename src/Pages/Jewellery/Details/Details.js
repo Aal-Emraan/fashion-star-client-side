@@ -1,4 +1,4 @@
-import { Button, CardContent, Grid, Rating, Stack, Typography } from '@mui/material';
+import { Button, CardContent, Grid, Rating,  Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -24,37 +24,37 @@ const Details = () => {
                             {jeweller.title}
                         </Typography>
                         <Rating
-                  style={{color:"#c29958" }}
-                  size="small"
-                  name="simple-controlled"
-                  value={jeweller.average_rating}
-                  onChange={(event, newValue) => {
-                    setValue(newValue);
-                  }}
-                />
+                            style={{ color: "#c29958" }}
+                            size="small"
+                            name="simple-controlled"
+                            value={jeweller.average_rating}
+                            onChange={(event, newValue) => {
+                                setValue(newValue);
+                            }}
+                        />
                         <Typography style={{ paddingLeft: "70px" }} variant='p'>
                             Reviews  {jeweller.total_rating}
                         </Typography><br />
                         <Typography sx={{ fontWeight: 'bold' }} variant='p'>
-                            Price: 
+                            Price:
                         </Typography>
                         <Typography style={{ paddingLeft: "8px" }} className='price-old' variant='p'>
-                             ${jeweller.regular_price}
+                            ${jeweller.regular_price}
                         </Typography>
                         <Typography className='price-regular' style={{ paddingLeft: "54px" }} variant='p'>
                             ${jeweller.discount_price}
                         </Typography><br />
                         <Typography sx={{ fontWeight: 'bold' }} variant='p'>
                             Availability:
-                        </Typography><Typography variant='p'  style={{color:"#c29958" }}> {jeweller.available_products} left in stock</Typography>
+                        </Typography><Typography variant='p' style={{ color: "#c29958" }}> {jeweller.available_products} left in stock</Typography>
                         <Typography paragraph>
                             {jeweller.description}
                         </Typography>
                         <Typography sx={{ fontWeight: 'bold' }} variant='p'>
                             Free home delivery:
                         </Typography>
-                        <Button style={{color:"#c29958" }} variant="text">{jeweller.free_home_delivery}</Button><br />
-                        <Button  style={{backgroundColor:"#c29958" , width:"100%"}} variant="contained">Add to cart</Button>
+                        <Button style={{ color: "#c29958" }} variant="text">{jeweller.free_home_delivery}</Button><br />
+                        <Button style={{ backgroundColor: "#c29958", width: "100%" }} variant="contained">Add to cart</Button>
                     </CardContent>
                 </Grid>
             </Grid>

@@ -4,6 +4,7 @@ import JewelleryHome from "../Jewellery/JewelleryHome/JewelleryHome";
 import Header from "../Shared/Header/Header";
 import WatchesHome from "../Watches/WatchesHome/WatchesHome";
 import Banner from "./Banner/Banner";
+import ExtraPart from "./ExtraPart/ExtraPart";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <WatchesHome />
       <GlassesHome />
       <JewelleryHome />
+      <ExtraPart />
     </div>
   );
 };
