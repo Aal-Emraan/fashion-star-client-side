@@ -1,0 +1,37 @@
+#banner {
+  background-image: url("../../../img/watch.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#discount {
+  background-image: linear-gradient(to right, black, #135997, black);
+  transform: scale(0.9);
+  transition-duration: 1s;
+}
+
+/* #f8d49b,
+#753f46,
+#cb1400, */
+#discount:hover {
+  /* background-image: linear-gradient(to right, #f8d49b, black, #f8d49b); */
+  transform: scale(1);
+}
+/* #div1 {
+  background-image: url("../../../img/braclet.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: lighten;
+  opacity: 0.6;
+  height: 500px;
+}
+
+#div2 {
+  background-image: url("../../../img/sunglass.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+} */
