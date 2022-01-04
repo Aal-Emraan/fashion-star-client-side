@@ -32,14 +32,32 @@ function App() {
           <Route path="/glasses/:id" element={<GlassesDetails />} />
           <Route path="/jewelaries" element={<Jewelaries />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/dashboard" element={<Dashboard />} >
-            <Route path='/dashboard' element={<AllProducts></AllProducts>} />
-            <Route path='/dashboard/allProducts' element={<AllProducts></AllProducts>} />
-            <Route path='/dashboard/allWatches' element={<AllWatches></AllWatches>} />
-            <Route path='/dashboard/allGlasses' element={<AllGlasses></AllGlasses>} />
-            <Route path='/dashboard/allJewellers' element={<AllJewellers></AllJewellers>} />
-            <Route path='/dashboard/allOrders' element={<AllOrders></AllOrders>} />
-            <Route path='/dashboard/update/:id' element={<UpdateCard></UpdateCard>} />
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="/dashboard" element={<AllProducts></AllProducts>} />
+            <Route
+              path="/dashboard/allProducts"
+              element={<AllProducts></AllProducts>}
+            />
+            <Route
+              path="/dashboard/allWatches"
+              element={<AllWatches></AllWatches>}
+            />
+            <Route
+              path="/dashboard/allGlasses"
+              element={<AllGlasses></AllGlasses>}
+            />
+            <Route
+              path="/dashboard/allJewellers"
+              element={<AllJewellers></AllJewellers>}
+            />
+            <Route
+              path="/dashboard/allOrders"
+              element={<AllOrders></AllOrders>}
+            />
+            <Route
+              path="/dashboard/update/:id"
+              element={<UpdateCard></UpdateCard>}
+            />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -52,3 +70,5 @@ function App() {
 }
 
 export default App;
+
+// Live Site Link:  https://fashionstar-5bdad.web.app/
