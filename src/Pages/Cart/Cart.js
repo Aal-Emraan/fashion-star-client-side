@@ -15,9 +15,9 @@ const Cart = () => {
   let normal_price = 0;
   let delivery = 0;
   carts.forEach(element => {
-    discount += parseInt(element.discount_price);
-    normal_price += parseInt(element.regular_price);
-    if (element.free_home_delivery === 'no' || element.free_home_delivery === 'NO') {
+    discount += parseInt(element?.discount_price);
+    normal_price += parseInt(element?.regular_price);
+    if (element?.free_home_delivery === 'no' || element?.free_home_delivery === 'NO') {
       delivery += 4.99;
     }
   });
@@ -52,7 +52,7 @@ const Cart = () => {
               <hr />
               <div>
                 {
-                  carts.map(cart => <CartCard key={cart._id} data={cart}></CartCard>)
+                  carts.map(cart => <CartCard key={cart?._id} data={cart}></CartCard>)
                 }
               </div>
             </div>

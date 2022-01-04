@@ -1,6 +1,8 @@
 import { Rating } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
+import { addToCart } from "../../dataSlice/dataSlice";
 import useProducts from "../../Hooks/useProducts";
 import "./Details.css";
 import RelatedDetails from "./RelatedDetails/RelatedDetails";
@@ -8,7 +10,7 @@ const Details = () => {
   const { id } = useParams();
   const [details, setDetails] = useState({});
   const [products] = useProducts();
-
+  const dispatch = useDispatch()
   console.log(id);
   const selectedCategory = products.filter(
     (product) => product.category === details?.category
@@ -72,11 +74,11 @@ const Details = () => {
             <p className="text-xl text-gray-600 my-6">{shortDescription} ...</p>
 
             <div className="flex space-x-5 text-white font-semibold">
-              <button className="bg-purple-400 p-2 rounded shadow-md">
+              <button onClick={() => dispatch(addToCart())} className="bg-purple-400 p-2 rounded shadow-md">
                 ADD TO CART
               </button>
               <button className="bg-purple-400 p-2 rounded shadow-md">
-                CHECKOUT
+                <NavLink to='/cart'>CHECKOUT</NavLink>
               </button>
             </div>
 

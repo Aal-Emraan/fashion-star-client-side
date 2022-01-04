@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import MenuIcon from "@material-ui/icons/Menu";
-
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useSelector } from "react-redux";
 import { logout, selectData } from "../../../dataSlice/dataSlice";
@@ -15,10 +14,10 @@ const Navbar = () => {
       <nav className="container mx-auto py-5 flex justify-between items-center text-white">
         <div>
           <NavLink className="text-2xl md:text-4xl" to="/">
-            FasionStar
+            <img className="w-full" src="https://i.ibb.co/JnwD7Bz/logo.png" alt="" />
           </NavLink>
         </div>
-        <div className="flex space-x-10">
+        <div className="md:flex space-x-10 hidden">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/allproducts">All Products</NavLink>
           <NavLink to="/watches">Watches</NavLink>
@@ -35,6 +34,9 @@ const Navbar = () => {
           ) : (
             <NavLink to="/login">Login</NavLink>
           )}
+        </div>
+        <div className=" md:hidden">
+          <MenuIcon></MenuIcon>
         </div>
       </nav>
     </div>

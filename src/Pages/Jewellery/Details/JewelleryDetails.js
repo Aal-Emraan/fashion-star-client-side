@@ -15,7 +15,7 @@ const JewelleryDetails = () => {
   console.log(id);
   const [jeweller, setJeweller] = useState([]);
   useEffect(() => {
-    fetch(`https://thawing-plateau-57038.herokuapp.com/jewelleries/${id}`)
+    fetch(`https://thawing-plateau-57038.herokuapp.com/details/${id}`)
       .then((res) => res.json())
       .then((data) => setJeweller(data));
   }, []);

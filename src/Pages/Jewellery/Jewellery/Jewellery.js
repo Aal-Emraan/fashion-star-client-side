@@ -9,12 +9,13 @@ import "./Jewellery.css";
 import { Button, Grid } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import JewelleryBanner from "../JewelleryBanner/JewelleryBanner";
-
+import { useDispatch } from 'react-redux'
+import { addToCart } from "../../../dataSlice/dataSlice";
 const Jewellery = () => {
   const [setValue] = React.useState([]);
   // *******************************************DATA LOAD
   const [jewellerys, setJewellerys] = useState([]);
-
+  const dispatch = useDispatch()
   useEffect(() => {
     fetch("https://thawing-plateau-57038.herokuapp.com/jewellaries")
       .then((result) => result.json())
@@ -77,14 +78,14 @@ const Jewellery = () => {
             >
               <Grid item xs={6}>
                 <NavLink
-                  to={`/jewelleries/${jewellery._id}`}
+                  to={`/details/${jewellery._id}`}
                   style={{ paddingLeft: "13px" }}
                 >
                   <Button variant="outlined">Details</Button>
                 </NavLink>
               </Grid>
               <Grid item xs={6}>
-                <Button style={{}} variant="outlined">
+                <Button onClick={() => dispatch(addToCart(jewellery))} variant="outlined">
                   Add To Cart
                 </Button>
               </Grid>

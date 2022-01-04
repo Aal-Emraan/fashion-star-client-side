@@ -1,5 +1,7 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { addToCart } from "../../../../dataSlice/dataSlice";
 import "../Watches.css";
 
 const WatchesSingle = (props) => {
@@ -12,6 +14,7 @@ const WatchesSingle = (props) => {
     average_rating,
     _id,
   } = props.product;
+  const dispatch = useDispatch();
   // const discount = regular_price - discount_price;
 
   const detailsUrl = `/details/${_id}`;
@@ -29,7 +32,7 @@ const WatchesSingle = (props) => {
             <p className="discount">${discount_price}</p>
           </div>
           <div className="flex justify-center gap-3 pb-3">
-            <button className="product-btn  px-2 py-1">ADD TO CART</button>
+            <button onClick={() => dispatch(addToCart(props.product))} className="product-btn  px-2 py-1">ADD TO CART</button>
             <NavLink to={detailsUrl}>
               <button className="product-btn  px-2 py-1">BUY NOW</button>
             </NavLink>
