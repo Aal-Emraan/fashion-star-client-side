@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import DashboardCard from "../DashboardCard/DashboardCard";
 
-const UpdateCard = () => {
+const AddProduct = () => {
   const { id } = useParams();
   const [data, setData] = useState();
   useEffect(() => {
@@ -34,98 +34,88 @@ const UpdateCard = () => {
       <Grid className="h-full" item xs={12} md={6}>
         {data && (
           <form
-            className="flex items-between h-full flex-col space-y-5 bg-white p-5 rounded"
+            className="flex items-between h-full flex-col space-y-5"
             onSubmit={handleSubmit(onSubmit)}
           >
             <TextField
-              defaultValue={data.img}
               {...register("img", { required: true })}
-              className="w-full"
+              className="w-full bg-white rounded text-gray-200 italic"
               label="Image link"
               variant="standard"
             />
 
             <TextField
-              defaultValue={data.title}
               {...register("title", { required: true })}
-              className="w-full"
+              className="w-full bg-white  rounded text-gray-200 italic"
               label="Title"
               variant="standard"
             />
 
-            <div>
+            <div className="flex justify-between">
               <TextField
                 defaultValue={data.category}
                 {...register("category", { required: true })}
-                className="w-1/2 mr-2"
+                className="  bg-white  rounded text-gray-200 italic text-sm"
                 label="Category"
                 variant="standard"
                 sx={{ mt: 3 }}
               />
               <TextField
-                defaultValue={data.for}
                 {...register("for", { required: true })}
-                className="w-1/2"
+                className=" bg-white rounded text-gray-200 italic"
                 label="For"
                 variant="standard"
               />
             </div>
 
             <TextField
-              defaultValue={data.description}
               {...register("description", { required: true })}
-              className="w-full"
+              className="w-full bg-white  rounded text-gray-200 italic"
               label="description"
               variant="standard"
             />
-            <div>
+            <div className="flex justify-between">
               <TextField
-                defaultValue={data.discount_price}
                 {...register("discount_price", { required: true })}
-                className="w-1/2"
+                className=" bg-white  rounded text-gray-200 italic text-sm"
                 label="Discount price"
                 variant="standard"
               />
               <TextField
-                defaultValue={data.regular_price}
                 {...register("regular_price", { required: true })}
-                className="w-1/2"
+                className="bg-white  rounded text-gray-200 italic text-sm"
                 label="Regular price"
                 variant="standard"
               />
             </div>
-            <div>
+            <div className="flex justify-between">
               <TextField
-                defaultValue={data.free_home_delivery}
                 {...register("free_home_delivery", { required: true })}
-                className="w-1/2"
+                className="bg-white  rounded text-gray-200 italic text-sm"
                 label="Free home delivery"
                 variant="standard"
               />
               <TextField
-                defaultValue={Math.ceil(data.average_rating)}
                 InputProps={{ inputProps: { min: 0, max: 5 } }}
                 type="number"
                 {...register("average_rating", { required: true })}
-                className="w-1/2"
+                className="bg-white w-1/2 rounded text-gray-200 italic text-sm"
                 label="Average rating"
                 variant="standard"
               />
             </div>
-            <div>
+            <div className="flex justify-between">
               <TextField
-                defaultValue={data.available_products}
                 InputProps={{ inputProps: { min: 1 } }}
                 type="number"
                 {...register("available_products", { required: true })}
-                className="w-1/2"
+                className="bg-white  rounded text-gray-200 italic text-sm"
                 label="Total stock"
                 variant="standard"
               />
               <TextField
-                defaultValue={data?.available_colors.join()}
                 {...register("available_colors", { required: true })}
-                className="w-1/2"
+                className="bg-white  rounded text-gray-200 italic text-sm"
                 label="Available colors"
                 variant="standard"
               />
@@ -140,4 +130,4 @@ const UpdateCard = () => {
   );
 };
 
-export default UpdateCard;
+export default AddProduct;

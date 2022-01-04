@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Cart from "./Pages/Cart/Cart";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import AddProduct from "./Pages/Dashboard/DashboardComponents/AddProduct/AddProduct";
 import AllGlasses from "./Pages/Dashboard/DashboardComponents/AllGlasses/AllGlasses";
 import AllJewellers from "./Pages/Dashboard/DashboardComponents/AllJewellers/AllJewellers";
 import AllOrders from "./Pages/Dashboard/DashboardComponents/AllOrders/AllOrders";
@@ -27,6 +28,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/allproducts" element={<AllProducts />} />
           <Route path="/watches" element={<Watches />} />
           <Route path="/glasses" element={<Glasses />} />
           <Route path="/glasses/:id" element={<GlassesDetails />} />
@@ -58,6 +60,7 @@ function App() {
               path="/dashboard/update/:id"
               element={<UpdateCard></UpdateCard>}
             />
+            <Route path="/dashboard/addproduct" element={<AddProduct />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

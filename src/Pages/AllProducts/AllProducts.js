@@ -11,8 +11,8 @@ const AllProducts = () => {
 
   console.log(allProducts);
   return (
-    <div>
-      <h1>this is all AllProducts</h1>
+    <div className="min-h-screen text-white">
+      <h1>this is all AllProducts {allProducts.length}</h1>
     </div>
   );
 };
