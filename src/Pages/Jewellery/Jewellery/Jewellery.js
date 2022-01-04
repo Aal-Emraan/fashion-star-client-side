@@ -8,6 +8,7 @@ import React, { useEffect, useState } from 'react';
 import './Jewellery.css';
 import { Button, Grid } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import JewelleryBanner from '../JewelleryBanner/JewelleryBanner';
 
 
 const Jewellery = () => {
@@ -22,7 +23,16 @@ const Jewellery = () => {
   }, [])
   return (
     <>
-      <div style={{ padding:"100px", paddingLeft:"90px",}} className='card'>
+    <JewelleryBanner></JewelleryBanner>
+    <div style={{ textAlign:"center", fontWeight:"bold", paddingTop:"15px", color:"rgba(27, 27, 27, 0.7)"}} >
+    <Typography style={{ fontWeight:"bold"}}  variant='h4'>
+    Featured Collection
+    </Typography>
+    <Typography style={{ fontWeight:"bold", color:"rgba(68, 67, 67, 0.7)"}}  variant='p'>
+    Add featured products to weekly lineup
+    </Typography>
+    </div>
+      <div style={{ padding:"80px", paddingLeft:"90px",}} className='card'>
         {
           jewellerys.map(jewellery =>
             <Card   className="card2"  style={{ padding:"8px",}} sx={{ maxWidth: 345 }}>
