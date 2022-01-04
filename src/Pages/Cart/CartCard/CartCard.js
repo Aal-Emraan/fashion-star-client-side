@@ -36,6 +36,9 @@ const CartCard = props => {
                 </p>
                 <h2 className='mb-3'>${discount_price}</h2>
                 {
+                    props.orders && <h2 className='mb-3'>status: pending</h2>
+                }
+                {
                     free_home_delivery === 'yes' ? <div className='flex  items-center'>
                         <img className='w-16 mr-2' src="https://whitebox.com/wp-content/uploads/2020/05/Prime-tag-.png" alt="" />
                         <h2 className='text-sm'>Free Next-day delivery</h2>
@@ -43,13 +46,16 @@ const CartCard = props => {
                         Delivery charge $4.99
                     </div>
                 }
+
             </Grid>
             <Grid item xs={3}>
                 <div className='h-full flex items-end '>
-                    <div>
-                        <Button className='hover:border hover:bg-red-500 border-red-300' onClick={() => dispatch(removeFormCart(_id))} sx={{ background: 'rgba(245,158,11,1)' }} variant='contained'>Remove Form cart</Button>
-                        <Button component={NavLink} to={`/details/${_id}`} sx={{ background: 'rgba(245,158,11,1)', mt: 3 }} variant='contained'>see details</Button>
-                    </div>
+                    {
+                        !props.orders && <div>
+                            <Button className='hover:border hover:bg-red-500 border-red-300' onClick={() => dispatch(removeFormCart(_id))} sx={{ background: 'rgba(245,158,11,1)' }} variant='contained'>Remove Form cart</Button>
+                            <Button component={NavLink} to={`/details/${_id}`} sx={{ background: 'rgba(245,158,11,1)', mt: 3 }} variant='contained'>see details</Button>
+                        </div>
+                    }
 
                 </div>
             </Grid>

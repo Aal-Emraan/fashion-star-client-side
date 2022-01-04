@@ -14,6 +14,7 @@ import Glasses from "./Pages/Glasses/Glasses/Glasses";
 import Home from "./Pages/Home/Home";
 import Jewelaries from "./Pages/Jewelaries/Jewelaries/Jewelaries";
 import Login from "./Pages/Login/Login";
+import MyOrders from "./Pages/MyOrders/MyOrders";
 import Details from "./Pages/ProductDetails/Details";
 import Register from "./Pages/Register/Register";
 import AdminRoute from "./Pages/Shared/AdminRoute/AdminRoute";
@@ -65,6 +66,8 @@ function App() {
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/myorders" element={<PrivateRoute><MyOrders /></PrivateRoute>} />
+
           <Route path="/details/:id" element={<PrivateRoute><Details /></PrivateRoute>} />
         </Routes>
         <Footer />
