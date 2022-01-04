@@ -41,13 +41,9 @@ const Jewellery = () => {
           Add featured products to weekly lineup
         </Typography>
       </div>
-      <div style={{ padding: "80px", paddingLeft: "90px" }} className="card">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 px-3 gap-5">
         {jewellerys.map((jewellery) => (
-          <Card
-            className="card2"
-            style={{ padding: "8px" }}
-            sx={{ maxWidth: 345 }}
-          >
+          <Card className="p-2 hover:bg-slate-50">
             <CardMedia
               component="img"
               style={{ width: "330px", height: "310px" }}
@@ -81,7 +77,7 @@ const Jewellery = () => {
             >
               <Grid item xs={6}>
                 <NavLink
-                  to={`/jewelleries/${jewellery._id}`} 
+                  to={`/jewelleries/${jewellery._id}`}
                   style={{ paddingLeft: "13px" }}
                 >
                   <Button variant="outlined">Details</Button>

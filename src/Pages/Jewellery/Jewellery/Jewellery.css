@@ -1,25 +1,13 @@
-.card{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
 .price-old {
-    font-size: 18px;
-    padding-left: 0;
-    padding-right: 10px;
-    color: #999;
-    font-weight: 300;
-    text-decoration: line-through;
+  font-size: 18px;
+  padding-left: 0;
+  padding-right: 10px;
+  color: #999;
+  font-weight: 300;
+  text-decoration: line-through;
 }
 .price-regular {
-    color: #c29958;
-    font-weight: 700;
-    font-size: 22px;
+  color: #c29958;
+  font-weight: 700;
+  font-size: 22px;
 }
-.card2{
-    transition: all 0.5s ease;
-  }
-  .card2:hover{
-    transform: scale(1.1);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    cursor: grabbing;
-  }
