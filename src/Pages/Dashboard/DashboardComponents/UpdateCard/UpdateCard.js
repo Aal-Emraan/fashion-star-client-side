@@ -40,7 +40,7 @@ const UpdateCard = () => {
             <TextField
               defaultValue={data.img}
               {...register("img", { required: true })}
-              className="w-full"
+              className="w-full bg-gray-200"
               label="Image link"
               variant="standard"
             />

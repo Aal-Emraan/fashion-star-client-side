@@ -81,7 +81,7 @@ const Jewellery = () => {
             >
               <Grid item xs={6}>
                 <NavLink
-                  to={`/jewelleries/${jewellery._id}`}
+                  to={`/jewelleries/${jewellery._id}`} 
                   style={{ paddingLeft: "13px" }}
                 >
                   <Button variant="outlined">Details</Button>

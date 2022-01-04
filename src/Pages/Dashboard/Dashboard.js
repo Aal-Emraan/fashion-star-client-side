@@ -113,6 +113,12 @@ function Dashboard(props) {
           </ListItemIcon>
           <p className="font-mono mb-3">Manage All Orders</p>
         </ListItem>
+        <ListItem button component={NavLink} to="/dashboard/addproduct">
+          <ListItemIcon style={{ color: "red" }}>
+            <ViewListIcon></ViewListIcon>{" "}
+          </ListItemIcon>
+          <p className="font-mono mb-3">Add Product</p>
+        </ListItem>
       </List>
       <Divider />
     </div>

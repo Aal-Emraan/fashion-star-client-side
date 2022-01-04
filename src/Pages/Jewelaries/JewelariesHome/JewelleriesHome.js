@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./JewelleryHome.css";
 
-const JewelleryHome = () => {
+const JewelleriesHome = () => {
   return (
     <>
       <div className="banner">
@@ -22,7 +22,7 @@ const JewelleryHome = () => {
                   Family Jewellery <br /> Collection
                 </h2>
                 <h4
-                  className="slide-desc font-light font-mono"
+                  className="slide-desc font-light"
                   style={{
                     paddingTop: "0px",
                     paddingLeft: "80px",
@@ -45,4 +45,4 @@ const JewelleryHome = () => {
   );
 };
 
-export default JewelleryHome;
+export default JewelleriesHome;

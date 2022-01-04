@@ -10,8 +10,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const JewelleryDetails = () => {
-  const [setValue] = React.useState([]);
+  const [setValue] = useState([]);
   const { id } = useParams();
+  console.log(id);
   const [jeweller, setJeweller] = useState([]);
   useEffect(() => {
     fetch(`https://thawing-plateau-57038.herokuapp.com/jewelleries/${id}`)

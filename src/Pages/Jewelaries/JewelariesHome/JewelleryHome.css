@@ -17,11 +17,11 @@
   overflow: hidden;
 }
 .header-btn {
-  width: 200px;
-  padding: 15px 0;
+  /* width: 200px; */
+  padding: 15px 20px;
   text-align: center;
   margin: 0 10px;
-  border-radius: 25px;
+  border-radius: 5px;
   font-weight: bold;
   border: 0px solid rgb(1, 33, 59);
   background: #977236;

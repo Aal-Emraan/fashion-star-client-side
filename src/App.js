@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import AllProduct from "./Pages/AllProducts/AllProduct";
 import Cart from "./Pages/Cart/Cart";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import AddProduct from "./Pages/Dashboard/DashboardComponents/AddProduct/AddProduct";
@@ -29,7 +30,11 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/allproducts" element={<AllProducts />} />
+          <Route path="/allproducts" element={<AllProduct />}>
+            <Route path="/allproducts/watches" element={<AllWatches />} />
+            <Route path="/allproducts/glasses" element={<AllGlasses />} />
+            <Route path="/allproducts/jewelleries" element={<AllJewellers />} />
+          </Route>
           <Route path="/watches" element={<Watches />} />
           <Route path="/glasses" element={<Glasses />} />
           <Route path="/glasses/:id" element={<GlassesDetails />} />
